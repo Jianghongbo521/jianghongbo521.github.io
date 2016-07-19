@@ -1,0 +1,35 @@
+body{
+	background-color: #2fa8ff;
+}
+.lock_box{
+	width: 720px; 
+	position: absolute;
+	bottom: 80px;
+	left:50%;
+	margin-left:-360px;
+}
+.lock{
+	padding: 14px 20px 20px 20px; 
+	width:676px; height:101px; 
+	background:#fff; 
+	border-radius: 30px; 
+	position: relative;
+	opacity: 0.6;
+}
+.lock .slider{
+	width: 146px; 
+	height: 96px; 
+	background: url(../images/lock.png);
+	position: absolute; 
+	top:50%; 
+	margin-top:-48px; 
+	left:20px;
+}
+.lock em{
+	padding-left: 250px; 
+	font-size: 50px; 
+	line-height: 96px; 
+	color: #000;
+	font-style: normal;
+
+}

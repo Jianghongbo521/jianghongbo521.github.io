@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{  margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	#ul1{height: 300px;
+		margin: 30px auto;
+		position: relative;
+		overflow: hidden;
+	}
+	#ul1 li{
+		height: 300px;
+		width: 300px;
+		float: left;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	img{
+		height: 100%;
+		width: 100%;
+		vertical-align: top;
+	}
+</style>
+<script src="move.js"></script>
+<script>
+	window.onload=function(){
+		var oUl=document.getElementById('ul1');
+		var aLi=oUl.children;
+
+		var w=40;
+		oUl.style.width=aLi[0].offsetWidth+(aLi.length-1)*w+'px';
+
+		for (var i = 1; i < aLi.length; i++) {
+			aLi[i].style.left=aLi[0].offsetWidth+(i-1)*w+'px';
+		};
+
+		for (var i = 0; i < aLi.length; i++) {
+			aLi[i].index=i;
+			aLi[i].onmouseover=function(){
+				for (var i = 1; i < aLi.length; i++) {
+					if (i<=this.index) {
+						move(aLi[i],{left:i*w})
+					} else{
+						move(aLi[i],{left:aLi[0].offsetWidth+(i-1)*w})
+					};
+				};
+			}
+		};
+	}
+</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li><img src="img1/1.jpg"></li>
+		<li><img src="img1/2.jpg"></li>
+		<li><img src="img1/3.jpg"></li>
+		<li><img src="img1/4.jpg"></li>
+		<li><img src="img1/5.jpg"></li>
+		<li><img src="img1/6.jpg"></li>
+	</ul>	
+</body>
+</html>
